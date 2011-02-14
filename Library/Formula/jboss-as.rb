@@ -5,11 +5,11 @@ require 'formula'
 #
 # @author Emmanuel Bernard emmanuel at hibernate.org
 class JbossAs <Formula
-  url 'http://downloads.sourceforge.net/project/jboss/JBoss/JBoss-6.0.0.CR1/jboss-as-distribution-6.0.0.20101110-CR1.zip'
+  url 'http://downloads.sourceforge.net/project/jboss/JBoss/JBoss-6.0.0.Final/jboss-as-distribution-6.0.0.Final.zip'
   #the "official" version name whereas 6.0.0.20101110-CR1 is the OSGi compliant name
-  version '6.0.0.CR1' 
+  version '6.0.0.Final' 
   homepage 'https://jboss.org/jbossas'
-  md5 '8599e8ec724c1877cdb752cc096e9572'
+  md5 '81ed7c2c274881963467c11f204eedfc'
 
   #empty dirs are meaningful to JBoss AS => avoid cleaning
   skip_clean :all
@@ -36,12 +36,5 @@ class JbossAs <Formula
       #{bin}
     to your PATH instead.
     EOS
-  end
-
-  def patches
-    # fix improper support for symlink sh scripts.
-    # proposed as a patch to the JBoss AS team
-    # https://jira.jboss.org/browse/JBAS-8670
-    { :p1 => "https://gist.github.com/raw/719041/1a140235916262f680ccc700083bf0e0b21ae743/JBAS-8670-symlink.patch" }
   end
 end
